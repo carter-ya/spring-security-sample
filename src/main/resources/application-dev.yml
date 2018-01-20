@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?useSSL=false&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: sQdAAj8eHN8yCXGn
+    hikari:
+      maximum-pool-size: 10
+logging:
+  level:
+    com.example.security: debug
+    org.springframework.web: debug

@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: ${APP_NAME:sample-security}
+  profiles:
+    active: ${ENV_NAME:dev}
+  datasource:
+    initialize: false
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      pool-name: hikariCP
+      maximum-pool-size: 30
+      connection-timeout: 30000
+  jpa:
+    generate-ddl: false
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+logging:
+  level:
+    root: info
+    org.springframework: info
+    springfox.documentation.spring.web.readers.operation: warn
+swagger:
+  enabled: true
+  title: sample-security
+  description: sample-security
+  contact:
+    name: LiuKeFeng
+    email: liukefeng2008@hotmail.com
+  global-operation-parameters[0]:
+    name: Token
+    description: 令牌
+    modelRef: string
+    parameter-type: string
+    required: false
+  exclude-path:
+    - /error
