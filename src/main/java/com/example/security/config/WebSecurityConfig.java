@@ -4,8 +4,6 @@ import com.example.security.repository.JdbcTokenBasedSecurityContextRepository;
 import com.example.security.repository.JdbcTokenBasedSecurityContextRepository.JdbcTokenRepository;
 import com.example.security.repository.TokenBasedSecurityContextRepository;
 import com.example.security.service.UserService;
-import com.example.security.web.LoginHandler;
-import com.example.security.web.LogoutHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -27,10 +25,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   @Autowired
   private UserService userService;
   @Autowired
-  private LogoutHandler logoutHandler;
-  @Autowired
-  private LoginHandler loginHandler;
-  @Autowired
   private SecurityContextRepository securityContextRepository;
 
 
@@ -51,7 +45,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .and()
         .formLogin().disable()
         .logout().disable()
-        .csrf().disable();
+        .csrf().disable()
+        .headers().disable();
   }
 
   @Override

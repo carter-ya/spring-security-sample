@@ -8,4 +8,4 @@ spring:
 logging:
   level:
     com.example.security: debug
-    org.springframework.web: debug
+    org.springframework.web: info

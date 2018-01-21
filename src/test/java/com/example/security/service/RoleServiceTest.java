@@ -51,9 +51,9 @@ public class RoleServiceTest {
   public void listValidRoles() {
     Long roleId = createRole();
     createRole("ADMIN", "管理员");
-    assertEquals(2, roleService.listValidRoles().size());
+    assertEquals(2, roleService.findValidRoles().size());
     roleService.delete(roleId);
-    assertEquals(1, roleService.listValidRoles().size());
+    assertEquals(1, roleService.findValidRoles().size());
   }
 
   @Test

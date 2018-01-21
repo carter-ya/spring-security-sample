@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 /**
  * 资源表
@@ -13,6 +14,7 @@ import lombok.EqualsAndHashCode;
 @Entity(name = "Resource")
 @Data
 @EqualsAndHashCode(callSuper = true)
+@NoArgsConstructor
 public class Resource extends AbstractEntity {
 
   private static final long serialVersionUID = 1L;
@@ -34,6 +36,11 @@ public class Resource extends AbstractEntity {
    */
   @Column(name = "f_state", nullable = false)
   private Integer state = 1;
+
+  public Resource(String resourceName, String url) {
+    this.resourceName = resourceName;
+    this.url = url;
+  }
 
   /**
    * 资源名称

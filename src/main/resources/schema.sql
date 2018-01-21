@@ -104,7 +104,7 @@ CREATE TABLE t_resource (
   f_resource_name VARCHAR(100)     NOT NULL DEFAULT ''
   COMMENT '资源名称',
   f_url           VARCHAR(100)     NOT NULL
-  COMMENT '菜单连接',
+  COMMENT '资源链接',
   f_state         TINYINT UNSIGNED NOT NULL DEFAULT 1
   COMMENT '状态 1 valid 有效 2 invalid 删除',
   f_created_at    BIGINT UNSIGNED  NOT NULL

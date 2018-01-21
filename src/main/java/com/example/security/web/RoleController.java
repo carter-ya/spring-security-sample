@@ -58,7 +58,7 @@ public class RoleController {
   @PreAuthorize("isAuthenticated()")
   @ApiOperation("获取当前用户所有有效的角色")
   public R<List<RoleResp>> validRoles() {
-    return R.ok(roleService.listValidRoles());
+    return R.ok(roleService.findValidRoles());
   }
 
   @PostMapping("/role/{roleId:\\d{1,19}}/authorities/authority/{authorityId:\\d{1,19}}")

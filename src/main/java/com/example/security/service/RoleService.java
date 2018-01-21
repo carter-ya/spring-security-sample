@@ -77,7 +77,7 @@ public class RoleService {
   /**
    * 获取所有有效的角色
    */
-  public List<RoleResp> listValidRoles() {
+  public List<RoleResp> findValidRoles() {
     return Extractor.map(roleRepository.findByState(CommonState.VALID_CODE), RoleResp::from);
   }
 
